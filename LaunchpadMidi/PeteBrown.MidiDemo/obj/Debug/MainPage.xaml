@@ -1,0 +1,100 @@
+﻿<Page
+    x:Class="PeteBrown.MidiDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PeteBrown.MidiDemo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.Resources>
+            <Style TargetType="TextBlock" x:Key="TextBlockStyle">
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="Margin" Value="5" />
+            </Style>
+            <Style TargetType="TextBlock" x:Key="HeaderTextBlockStyle">
+                <Setter Property="FontSize" Value="26" />
+                <Setter Property="Margin" Value="10,20,10,20" />
+            </Style>
+        </Grid.Resources>
+
+        <Grid Margin="50">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+
+            <StackPanel Grid.Row="0" Margin="5">
+                <TextBlock Text="Input Devices" Style="{StaticResource HeaderTextBlockStyle}"/>
+                <StackPanel Orientation="Horizontal" Margin="10">
+                    <TextBlock Text="Name" Width="240" Style="{StaticResource TextBlockStyle}" />
+                    <TextBlock Text="Enabled" Width="90" Style="{StaticResource TextBlockStyle}" />
+                    <TextBlock Text="Default" Width="90" Style="{StaticResource TextBlockStyle}" />
+                    <TextBlock Text="Id" Style="{StaticResource TextBlockStyle}" />
+                </StackPanel>
+
+                <ListBox x:ConnectionId='5' x:Name="InputDevices">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="250" />
+                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="{Binding Name}" Grid.Column="0" Style="{StaticResource TextBlockStyle}"/>
+                                <TextBlock Text="{Binding IsEnabled}" Grid.Column="1" Style="{StaticResource TextBlockStyle}"/>
+                                <TextBlock Text="{Binding IsDefault}" Grid.Column="2" Style="{StaticResource TextBlockStyle}"/>
+                                <TextBlock Text="{Binding Id}" Grid.Column="3" Style="{StaticResource TextBlockStyle}"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Margin="5">
+                <TextBlock Text="Output Devices" Style="{StaticResource HeaderTextBlockStyle}"/>
+                <StackPanel Orientation="Horizontal" Margin="10">
+                    <TextBlock Text="Name" Width="240" Style="{StaticResource TextBlockStyle}" />
+                    <TextBlock Text="Enabled" Width="90" Style="{StaticResource TextBlockStyle}" />
+                    <TextBlock Text="Default" Width="90" Style="{StaticResource TextBlockStyle}" />
+                    <TextBlock Text="Id" Style="{StaticResource TextBlockStyle}" />
+                </StackPanel>
+                <ListBox x:ConnectionId='4' x:Name="OutputDevices">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="250" />
+                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="{Binding Name}" Grid.Column="0" Style="{StaticResource TextBlockStyle}"/>
+                                <TextBlock Text="{Binding IsEnabled}" Grid.Column="1" Style="{StaticResource TextBlockStyle}"/>
+                                <TextBlock Text="{Binding IsDefault}" Grid.Column="2" Style="{StaticResource TextBlockStyle}"/>
+                                <TextBlock Text="{Binding Id}" Grid.Column="3" Style="{StaticResource TextBlockStyle}"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>
+
+            <StackPanel Grid.Row="2" Margin="5" Orientation="Horizontal">
+                <Button x:ConnectionId='1' x:Name="ConnectToLaunchpad" Content="Connect to Launchpad"                       Margin="10"/>
+                <Button x:ConnectionId='2' x:Name="ResetLaunchpad" Content="Reset Launchpad"                     Margin="10" />
+                <Button x:ConnectionId='3' x:Name="CoolStuff" Content="Do Cool Stuff"                         Margin="10"/>
+
+            </StackPanel>
+
+
+        </Grid>
+
+    </Grid>
+
+</Page>
+
