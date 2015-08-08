@@ -1,0 +1,1 @@
+D:\Users\Pete\Documents\GitHub\Windows-10-Launchpad-MIDI\LaunchpadMidi\PeteBrown.MidiDemo\PeteBrown.MidiDemo.csproj;x86
